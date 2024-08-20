@@ -7,7 +7,6 @@ import Header from "./components/Header";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
