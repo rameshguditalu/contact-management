@@ -1,5 +1,5 @@
 import React from "react";
-import { useWorldData, useCountryData, useGraphData } from "../APIs";
+import { useWorldData, useCountryData, useGraphData } from "../app/API";
 import LineGraph from "../components/LineGraph";
 import { Map } from "../components";
 
@@ -32,13 +32,11 @@ const Dashboard: React.FC = () => {
         <p>Total Active Cases: {worldData.active}</p>
         <p>Total Recovered: {worldData.recovered}</p>
       </div>
-
-      <div className="border-8 border-white shadow-xl w-5/6 ">
-        <Map countries={countryDataQuery.data} />
-      </div>
-
-      <div className="p-4 mb-2 w-3/6 border-8 border-white shadow-xl">
+      <div className="p-4 mb-2 w-5/6 border-8 border-white shadow-xl">
         <LineGraph data={graphDataQuery.data} />
+      </div>
+      <div className="border-8 border-white shadow-xl w-5/6 h-20">
+        <Map countries={countryDataQuery.data} />
       </div>
     </div>
   );

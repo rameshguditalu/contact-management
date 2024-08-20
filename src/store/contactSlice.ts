@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
-interface Contact {
+export interface Contact {
   id: string;
-  fullName: string;
-  lastName: string;
-  status: boolean;
+  fName: string;
+  lName: string;
+  isActive: string;
 }
 
 interface ContactState {
@@ -36,18 +36,10 @@ const contactSlice = createSlice({
         state.contacts[index] = action.payload;
       }
     },
-    toggleStatus: (state, action: PayloadAction<string>) => {
-      const contact = state.contacts.find(
-        (contact) => contact.id === action.payload
-      );
-      if (contact) {
-        contact.status = !contact.status;
-      }
-    },
   },
 });
 
-export const { addContact, deleteContact, editContact, toggleStatus } =
+export const { addContact, deleteContact, editContact } =
   contactSlice.actions;
 export const selectContact = (state: RootState) => state.contacts.contacts;
 

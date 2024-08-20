@@ -3,7 +3,7 @@ import { useAppSelector } from "../store/hook";
 import { selectContact } from "../store/contactSlice";
 
 const buttonStyle =
-  "bg-black hover:bg-white hover:text-black w-full p-2 text-white outline";
+  "bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded";
 
 const CreateContact = () => {
   const contacts = useAppSelector(selectContact);
